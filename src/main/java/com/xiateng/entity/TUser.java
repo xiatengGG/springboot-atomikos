@@ -1,8 +1,9 @@
 package com.xiateng.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class TUser {
+public class TUser implements Serializable{
     private Integer userId;
 
     private String userName;

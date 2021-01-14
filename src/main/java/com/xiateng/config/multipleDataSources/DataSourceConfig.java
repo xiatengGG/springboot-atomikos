@@ -37,6 +37,7 @@ public class DataSourceConfig {
         //这里的AtomikosDataSourceBean使用的是spring提供的
         AtomikosDataSourceBean atomikosDataSourceBean = new AtomikosDataSourceBean();
         atomikosDataSourceBean.setXaDataSource(xaDataSource);
+        atomikosDataSourceBean.setMaxPoolSize(20);
         return atomikosDataSourceBean;
     }
 

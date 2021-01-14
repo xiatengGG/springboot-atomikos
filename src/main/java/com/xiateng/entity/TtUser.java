@@ -1,8 +1,9 @@
 package com.xiateng.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class TtUser {
+public class TtUser implements Serializable{
     private Long id;
 
     private String loginName;

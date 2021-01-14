@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xiateng.dao.user.TtUserMapper">
+
+  <!-- -->
+  <cache eviction="LRU" flushInterval="10000" size="1024"  />
+
   <resultMap id="BaseResultMap" type="com.xiateng.entity.TtUser">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="login_name" jdbcType="VARCHAR" property="loginName" />
@@ -98,7 +102,8 @@
     status, create_time, login_time, created_by, update_time, updated_by, source, is_member, 
     provinceId, areaId, provinceName, areaName, MOBILE_TGC
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+  <!--可以通过设置useCache来规定这个sql是否开启缓存，ture是开启，false是关闭-->
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap" useCache="true">
     select 
     <include refid="Base_Column_List" />
     from t_user
