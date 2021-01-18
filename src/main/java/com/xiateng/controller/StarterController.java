@@ -104,12 +104,26 @@ public class StarterController {
 
     @RequestMapping(value = "/a", method = RequestMethod.GET)
     public String sdf(Model model, HttpServletRequest request) {
-        Jedis jedis = JedisUtil.getJedis();
+//        Jedis jedis = JedisUtil.getJedis();
+//        jedis.hset("user", "id", "3");
+//        jedis.hset("user", "name", "xiateng");
+//        jedis.hset("user", "password", "123455");
+//        jedis.hget("user","id");
+//        List<String> user = jedis.hmget("user", new String[]{"id","name","password"});
+//        System.out.println("---------------------------:  "+user);
+
+        Map map = new TreeMap();
+        map.put("2","222222");
+        map.put("1","111111");
+        map.put("5","555555");
+        map.put("3","333333");
+        Map map1 = new HashMap();
+        map1.put("2","222222");
 //        TUser tUser = new TUser();
 //        tUser.setUserName("你好");
 //        tUser.setPassword("2342342");
 //        jedis.set("xiateng", JSON.toJSONString(tUser));
-//
+
 //        String sss = jedis.get("xiateng");
 //        TUser ssss = JSON.parseObject(sss,TUser.class);
 //        jedis.del("xiateng");
@@ -142,14 +156,14 @@ public class StarterController {
 //        jedis.zadd("test4",3.0,"你好3");
 //        jedis.zadd("test4",2.0,"你好2");
 //        Set<String> test4 = jedis.zrange("test4", 0, -1);
-        Map map = new HashMap();
-        map.put("ddd","adfsd");map.put("ddd2","大幅度");
-        System.out.println(map.toString());
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("ddd","adfsd");jsonObject.put("ddd2","大幅度");
-        System.out.println(jsonObject.toString());
-        System.out.println(jsonObject.toJSONString());
-        jedis.del("test","test1","test2");
+//        Map map = new HashMap();
+//        map.put("ddd","adfsd");map.put("ddd2","大幅度");
+//        System.out.println(map.toString());
+//        JSONObject jsonObject = new JSONObject();
+//        jsonObject.put("ddd","adfsd");jsonObject.put("ddd2","大幅度");
+//        System.out.println(jsonObject.toString());
+//        System.out.println(jsonObject.toJSONString());
+//        jedis.del("test","test1","test2");
 
         return "";
     }
